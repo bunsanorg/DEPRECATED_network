@@ -1,5 +1,4 @@
-#ifndef BUNSAN_SERVICE_HPP
-#define BUNSAN_SERVICE_HPP
+#pragma once
 
 #include <memory>
 
@@ -16,24 +15,21 @@ namespace bunsan
          * if service was started before, it will do restart
          */
         virtual void start()=0;
-        /*!
-         * \brief join service thread
-         */
+
+        /// join service thread
         virtual void join()=0;
+
         /*!
          * \brief stop service
          *
          * non-blocking call, service will continue execution, but soon should do clean-up actions and stop.
          */
         virtual void stop()=0;
-        /*!
-         * \return whether service is running
-         */
+
+        /// \return whether service is running
         virtual bool is_running()=0;
+
         virtual inline ~service(){}
     };
     typedef std::shared_ptr<service> service_ptr;
 }
-
-#endif //BUNSAN_SERVICE_HPP
-

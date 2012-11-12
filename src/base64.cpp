@@ -17,4 +17,3 @@ std::vector<unsigned char> bunsan::base64::decode(const std::string &base64)
 {
     return xmlrpc_c::bytesFromBase64(base64);
 }
-

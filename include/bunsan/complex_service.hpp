@@ -1,5 +1,4 @@
-#ifndef BUNSAN_COMPLEX_SERVICE_HPP
-#define BUNSAN_COMPLEX_SERVICE_HPP
+#pragma once
 
 #include <vector>
 
@@ -10,16 +9,15 @@ namespace bunsan
     class complex_service: virtual public service
     {
     public:
-        virtual void start();
-        virtual void join();
-        virtual void stop();
-        virtual bool is_running();
-        virtual ~complex_service();
+        void start() override;
+        void join() override;
+        void stop() override;
+        bool is_running() override;
+        ~complex_service() override;
+
     protected:
         typedef std::vector<service_ptr> container;
-        container services;
+
+        container m_services;
     };
 }
-
-#endif //BUNSAN_COMPLEX_SERVICE_HPP
-

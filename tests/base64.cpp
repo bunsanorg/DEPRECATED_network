@@ -37,4 +37,3 @@ int main()
     data_.resize(0);
     test(data_);
 }
-

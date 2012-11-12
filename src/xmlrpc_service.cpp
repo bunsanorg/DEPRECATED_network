@@ -6,13 +6,13 @@ void bunsan::xmlrpc_service::run()
 {
     server_ptr server_;
     {
-        guard lk(slock);
+        guard lk(m_slock);
         create_server();
         server_ = server;
     }
     server_->run();
     {
-        guard lk(slock);
+        guard lk(m_slock);
         server.reset();
     }
 }
@@ -21,29 +21,29 @@ void bunsan::xmlrpc_service::start()
 {
     server_ptr server_;
     {
-        guard lk(slock);
+        guard lk(m_slock);
         server_ = server;
     }
     if (server_)
     {
         server_->terminate();
         {
-            guard lk(tlock);
-            if (thread.joinable())
-                thread.join();
+            guard lk(m_tlock);
+            if (m_thread.joinable())
+                m_thread.join();
         }
     }
     {
-        guard lk(tlock);
-        thread = std::thread(&bunsan::xmlrpc_service::run, this);
+        guard lk(m_tlock);
+        m_thread = std::thread(&bunsan::xmlrpc_service::run, this);
     }
 }
 
 void bunsan::xmlrpc_service::join()
 {
-    guard lk(tlock);
-    if (thread.joinable())
-        thread.join();
+    guard lk(m_tlock);
+    if (m_thread.joinable())
+        m_thread.join();
 }
 
 void bunsan::xmlrpc_service::stop()
@@ -51,7 +51,7 @@ void bunsan::xmlrpc_service::stop()
     DLOG(trying to stop);
     server_ptr server_;
     {
-        guard lk(slock);
+        guard lk(m_slock);
         server_ = server;
     }
     if (server_)
@@ -60,7 +60,7 @@ void bunsan::xmlrpc_service::stop()
 
 bool bunsan::xmlrpc_service::is_running()
 {
-    guard lk(slock);
+    guard lk(m_slock);
     return static_cast<bool>(server);
 }
 
@@ -70,4 +70,3 @@ bunsan::xmlrpc_service::~xmlrpc_service()
     stop();
     join();
 }
-

@@ -89,4 +89,3 @@ int main()
         test(inp, out, vec);
     }
 }
-

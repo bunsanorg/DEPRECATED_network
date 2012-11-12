@@ -104,4 +104,3 @@ bool bunsan::zmq::socket_t::recv(std::vector<std::string> &msg, int opt)
     }
     return ret;
 }
-

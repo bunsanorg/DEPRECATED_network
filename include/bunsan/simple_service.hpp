@@ -1,5 +1,4 @@
-#ifndef BUNSAN_SIMPLE_SERVICE_HPP
-#define BUNSAN_SIMPLE_SERVICE_HPP
+#pragma once
 
 namespace bunsan
 {
@@ -8,9 +7,7 @@ namespace bunsan
     public:
         virtual void join()=0;
         virtual void stop()=0;
+
         virtual inline ~simple_service(){}
     };
 }
-
-#endif //BUNSAN_SIMPLE_SERVICE_HPP
-

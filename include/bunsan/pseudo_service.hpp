@@ -1,10 +1,9 @@
-#ifndef BUNSAN_PSEUDO_SERVICE_HPP
-#define BUNSAN_PSEUDO_SERVICE_HPP
+#pragma once
+
+#include "bunsan/service.hpp"
 
 #include <mutex>
 #include <condition_variable>
-
-#include "bunsan/service.hpp"
 
 namespace bunsan
 {
@@ -12,18 +11,18 @@ namespace bunsan
     {
     public:
         pseudo_service();
-        virtual void start();
-        virtual void join();
-        virtual void stop();
-        virtual bool is_running();
-        virtual ~pseudo_service();
+
+        void start() override;
+        void join() override;
+        void stop() override;
+        bool is_running() override;
+        ~pseudo_service() override;
+
     private:
         typedef std::unique_lock<std::mutex> guard;
-        std::mutex run_lock;
-        bool running;
-        std::condition_variable joiner;
+
+        std::mutex m_run_lock;
+        bool m_running;
+        std::condition_variable m_joiner;
     };
 }
-
-#endif //BUNSAN_PSEUDO_SERVICE_HPP
-
