@@ -8,6 +8,6 @@ namespace bunsan
         virtual void join()=0;
         virtual void stop()=0;
 
-        virtual inline ~simple_service(){}
+        virtual inline ~simple_service() {}
     };
 }

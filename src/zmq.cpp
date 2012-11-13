@@ -11,7 +11,7 @@ void bunsan::zmq::socket_t::set_linger(int linger_)
 
 bunsan::zmq::socket_t::~socket_t()
 {
-};
+}
 
 bool bunsan::zmq::socket_t::send(const std::string &msg, int opt)
 {
