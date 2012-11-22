@@ -18,6 +18,6 @@ namespace bunsan
     protected:
         typedef std::vector<service_ptr> container;
 
-        container m_services;
+        container services;
     };
 }
