@@ -1,4 +1,4 @@
-#include "bunsan/util.hpp"
+#include "bunsan/logging/legacy.hpp"
 #include "bunsan/zmq.hpp"
 
 #include <algorithm>
