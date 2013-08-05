@@ -1,6 +1,6 @@
-#include "bunsan/xmlrpc_service.hpp"
+#include <bunsan/xmlrpc_service.hpp>
 
-#include "bunsan/logging/legacy.hpp"
+#include <bunsan/logging/legacy.hpp>
 
 void bunsan::xmlrpc_service::run()
 {

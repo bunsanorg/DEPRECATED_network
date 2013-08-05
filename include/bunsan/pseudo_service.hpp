@@ -1,6 +1,6 @@
 #pragma once
 
-#include "bunsan/service.hpp"
+#include <bunsan/service.hpp>
 
 #include <mutex>
 #include <condition_variable>

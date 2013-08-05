@@ -1,6 +1,6 @@
 #pragma once
 
-#include "bunsan/service.hpp"
+#include <bunsan/service.hpp>
 
 #include <xmlrpc-c/server_abyss.hpp>
 #include <xmlrpc-c/registry.hpp>
