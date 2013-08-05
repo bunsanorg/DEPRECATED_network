@@ -1,10 +1,11 @@
-#include <bunsan/logging/legacy.hpp>
 #include <bunsan/zmq.hpp>
+
+#include <bunsan/logging/legacy.hpp>
 
 #include <algorithm>
 
-#include <cstdlib>
 #include <cassert>
+#include <cstdlib>
 
 namespace bzmq = bunsan::zmq;
 

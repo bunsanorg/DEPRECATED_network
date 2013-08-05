@@ -2,8 +2,8 @@
 
 #include <bunsan/service.hpp>
 
-#include <mutex>
 #include <condition_variable>
+#include <mutex>
 
 namespace bunsan
 {

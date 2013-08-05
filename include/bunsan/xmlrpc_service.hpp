@@ -2,12 +2,12 @@
 
 #include <bunsan/service.hpp>
 
-#include <xmlrpc-c/server_abyss.hpp>
-#include <xmlrpc-c/registry.hpp>
 #include <xmlrpc-c/girerr.hpp>
+#include <xmlrpc-c/registry.hpp>
+#include <xmlrpc-c/server_abyss.hpp>
 
-#include <thread>
 #include <mutex>
+#include <thread>
 
 namespace bunsan
 {

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <vector>
-
 #include <bunsan/service.hpp>
+
+#include <vector>
 
 namespace bunsan
 {
