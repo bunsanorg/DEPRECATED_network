@@ -6,7 +6,7 @@ project(bunsan_network)
 
 find_package(BunsanCMake CONFIG REQUIRED)
 
-bunsan_add_shared_library(${PROJECT_NAME}
+bunsan_add_library(${PROJECT_NAME}
     src/zmq.cpp
     src/base64.cpp
     src/xmlrpc_service.cpp
